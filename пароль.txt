@@ -1,0 +1,96 @@
+SELECT CONCAT('*', UPPER(SHA1(UNHEX(SHA1('medved')))));
+            progressBar1.Visible = true;
+            progressBar1.Value = 6;
+            string myConnectionString = "Database=mlangdb;Data Source=mlangdb.c1atyl3qs7je.us-east-1.rds.amazonaws.com;User Id=bashquart;Password=20022015220; Old Guids=true";
+            progressBar1.Value = 12;
+            MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+            try
+            {
+                progressBar1.Value = 18;
+                myConnection.Open();
+                progressBar1.Value = 24;
+                myConnection.Close();
+                progressBar1.Value = 30;
+                MessageBox.Show("Подключение установлено, ожидайте входа!", "MLangD");
+                progressBar1.Value = 36;
+
+                string СтрокаВхода = "Database=mysql; Data Source=mlangdb.c1atyl3qs7je.us-east-1.rds.amazonaws.com; User Id=bashquart; Password=20022015220; Old Guids=true";
+                progressBar1.Value = 42;
+                MySqlConnection Вход = new MySqlConnection(СтрокаВхода);
+                progressBar1.Value = 48;
+
+                MySqlDataReader reader = null;
+                MySqlDataReader reader2 = null;
+                MySqlDataReader reader3 = null;
+
+                progressBar1.Value = 54;
+                string AuthQuery = "select * from user";
+                string EncrPasswordQuery = "SELECT CONCAT('*', UPPER(SHA1(UNHEX(SHA1(@password_box_Value)))));";
+                progressBar1.Value = 60;
+
+                Вход.Open();
+                
+                progressBar1.Value = 66;
+                MySqlCommand AuthCommand = new MySqlCommand(AuthQuery, Вход);
+                MySqlCommand EncrPasswordCommamd = new MySqlCommand(EncrPasswordQuery, Вход);
+                EncrPasswordCommamd.Parameters.AddWithValue("@password_box_Value", password_box.Text);
+                progressBar1.Value = 72;
+
+                reader = AuthCommand.ExecuteReader();
+                reader2 = AuthCommand.ExecuteReader();
+                reader3 = EncrPasswordCommamd.ExecuteReader();
+
+                progressBar1.Value = 78;
+                List<string> PasswordList = new List<string>();
+                List<string> LoginList = new List<string>();
+                string EncrPassword = null;
+                progressBar1.Value = 88;
+
+                while (reader3.Read())
+                {
+                    EncrPassword = EncrPasswordCommamd.ExecuteScalar().ToString(); 
+                }
+
+                while (reader2.Read())
+                {
+                    PasswordList.Add((string)reader2["authentification_string"]);
+                }
+
+                while (reader.Read())
+                {
+                    LoginList.Add((string)reader["User"]);
+                }
+
+                progressBar1.Value = 95;
+
+                string Login = LoginList.Find((x) => x == login_box.Text);
+                string Password = PasswordList.Find((x) => x == password_box.Text);
+
+                if (Login == login_box.Text && Password == EncrPassword)
+                {                    
+                    progressBar1.Value = 100;
+                    progressBar1.Visible = false;
+                    MessageBox.Show("Добро пожаловать! Вы вошли в словарь.", "MLangD");
+                    Menu newForm = new Menu();
+                    newForm.Show();
+                    this.Hide();
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Неверный логин или пароль, пожалуйста, повторите попытку!", "MLangD",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button3,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                    progressBar1.Value = 100;
+                    progressBar1.Visible = false;
+                }
+            }
+            catch (System.Exception)
+            {
+                progressBar1.Value = 100;
+                progressBar1.Visible = false;
+                MessageBox.Show("Проверьте подключение к интернету...", "MLangD");
+            }

@@ -1,0 +1,313 @@
+use mlangdb;
+create table categories
+(catnum int primary key auto_increment not null,
+ catname varchar(50));
+ 
+create table words
+(word_id int primary key auto_increment not null,
+ wordValue varchar(50),
+ category int,
+ foreign key (category) references categories(catnum));
+
+create table ba_lang
+(WordOnLang varchar(25),
+ word_id int,
+ category int,
+ foreign key (word_id) references words(word_id),
+ foreign key (category) references categories(catnum));
+ 
+create table ba_yu_lang
+(WordOnLang varchar(25),
+ word_id int,
+ category int,
+ foreign key (word_id) references words(word_id),
+ foreign key (category) references categories(catnum));
+ 
+ create table tt_lang
+(WordOnLang varchar(25),
+ word_id int,
+ category int,
+ foreign key (word_id) references words(word_id),
+ foreign key (category) references categories(catnum));
+ 
+ create table en_lang
+(lang_id int primary key
+ WordOnLang varchar(25),
+ word_id int,
+ category int,
+ foreign key (word_id) references words(word_id),
+ foreign key (category) references categories(catnum));
+ 
+ create table translations
+ (Word int,
+  ba_ru int,
+  ba_yu_ru int,
+  tt_ru int,
+  en_ru int,
+  foreign key (word_id) references words(word_id),
+  foreign key (word_id) references words(word_id),
+  foreign key (word_id) references words(word_id),
+  foreign key (word_id) references words(word_id),
+  foreign key (word_id) references words(word_id),
+ )
+ 
+ 
+ 
+ 
+ 
+ 
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('1', 'Я');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('2', 'Ты');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('3', 'Мы');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('4', 'Вы');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('5', 'Он');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('6', 'Она');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('7', 'Они');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('8', 'Оно');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('9', 'Этот');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('10', 'Тот');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('11', 'Здесь');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('12', 'Там');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('13', 'Кто?');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('14', 'Что?');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('15', 'Где?');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('16', 'Когда?');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('17', 'Как?');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('18', 'Не');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('19', 'Все');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('20', 'Много');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('21', 'Несколько');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('22', 'Немного');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('23', 'Другой');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('24', 'Один');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('25', 'Два');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('26', 'Три');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('27', 'Четыре');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('28', 'Пять');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('29', 'Большой');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('30', 'Длинный');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('31', 'Широкий');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('32', 'Плотный');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('33', 'Тяжёлый');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('34', 'Маленький');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('35', 'Короткий');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('36', 'Узкий');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('37', 'Тонкий');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('38', 'Женщина');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('39', 'Мужчина');
+INSERT INTO `ru_lang`(`rulang_id`, `RussianWords`) VALUES ('40', 'Человек');
+
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('1', 'Мин');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('2', 'Һин');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('3', 'Беҙ');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('4', 'Һеҙ');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('5', 'Ул');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('6', 'Ул');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('7', 'Ул');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('8', 'Ул');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('9', 'Был');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('10', 'Шул');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('11', 'Бында');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('12', 'Унда');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('13', 'Кем?');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('14', 'Ни?');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('15', 'Ҡайҙа?');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('16', 'Ҡасан?');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('17', 'Нисек?');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('18', 'түгел');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('19', 'Барлыҡ');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('20', 'Күп');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('21', 'Бер нисә');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('22', 'Әҙ');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('23', 'Башҡа');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('24', 'Бер');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('25', 'Ике');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('26', 'Өс');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('27', 'Дүрт');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('28', 'Биш');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('29', 'Өлкән');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('30', 'Оҙон');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('31', 'Киң');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('32', 'Ҡалын');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('33', 'Ауыр');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('34', 'Бәләкәс');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('35', 'Ҡыҫҡа');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('36', 'Тар');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('37', 'Йоҡа');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('38', 'Ҡатын');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('39', 'Ир');
+INSERT INTO `ba_lang`(`bashlang_id`, `BashkirWords`) VALUES ('40', 'Кеше');
+
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('1', 'Мин');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('2', 'Cин');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('3', 'Беp');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('4', 'Сез');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('5', 'Ул');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('6', 'Ул');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('7', 'Ул');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('8', 'Ул');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('9', 'Бу');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('10', 'Шу');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('11', 'Монда');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('12', 'Анда');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('13', 'Кем?');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('14', 'Ни?');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('15', 'Кайда?');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('16', 'Качан?');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('17', 'Ничек?');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('18', 'түгел');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('19', 'Барлык');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('20', 'Күп');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('21', 'Бер ничә');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('22', 'Әз');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('23', 'Башка');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('24', 'Бер');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('25', 'Ике');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('26', 'Өч');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('27', 'Дүрт');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('28', 'Биш');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('29', 'Өлкән');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('30', 'Озын');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('31', 'Киң');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('32', 'Калын');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('33', 'Ар');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('34', 'Киче');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('35', 'Кыска');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('36', 'Тар');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('37', 'Нәзек');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('38', 'Катын');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('39', 'Ир');
+INSERT INTO `tt_lang`(`tatlang_id`, `TatarWords`) VALUES ('40', 'Кеше');
+
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('1', 'I');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('2', 'Thou');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('3', 'We');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('4', 'You');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('5', 'He');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('6', 'She');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('7', 'They');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('8', 'It');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('9', 'This');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('10', 'That');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('11', 'Here');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('12', 'There');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('13', 'Who?');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('14', 'What?');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('15', 'Where?');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('16', 'When?');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('17', 'How?');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('18', 'Not');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('19', 'All');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('20', 'Many');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('21', 'Some');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('22', 'Few');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('23', 'Other');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('24', 'One');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('25', 'Two');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('26', 'Three');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('27', 'Four');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('28', 'Five');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('29', 'Big');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('30', 'Long');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('31', 'Wide');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('32', 'Thick');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('33', 'Heavy');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('34', 'Small');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('35', 'Short');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('36', 'Narrow');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('37', 'Thin');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('38', 'Woman');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('39', 'Man');
+INSERT INTO `en_lang`(`englang_id`, `EnglishWords`) VALUES ('40', 'Human');
+
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('1', 'Мин');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('2', 'Ҫин');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('3', 'Беҙ');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('4', 'Ҫеҙ');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('5', 'Ул');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('6', 'Ул');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('7', 'Ул');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('8', 'Ул');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('9', 'Был');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('10', 'Шул');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('11', 'Мында');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('12', 'Анда');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('13', 'Кем?');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('14', 'Ний?');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('15', 'Ҡайҙа?');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('16', 'Ҡасан?');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('17', 'Нисек?');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('18', 'түгел');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('19', 'Бөтә');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('20', 'Күп');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('21', 'Әллә нисә');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('22', 'Әҙ');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('23', 'Икенсе');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('24', 'Бер');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('25', 'Ике');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('26', 'Өс');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('27', 'Дүрт');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('28', 'Биш');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('29', 'Ҙур');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('30', 'Оҙон');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('31', 'Киң');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('32', 'Ҡалын');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('33', 'Аур');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('34', 'Бәләкәй');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('35', 'Ҡыҫҡаҡ');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('36', 'Тар');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('37', 'Йоҡаҡ');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('38', 'Бисә');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('39', 'Ир');
+INSERT INTO `bayu_lang`(`southbashlang_id`, `YurmatinWords`) VALUES ('40', 'Кеше');
+
+INSERT INTO categories VALUES ('1', 'Анатомия');
+INSERT INTO categories VALUES ('2', 'Археология');
+INSERT INTO categories VALUES ('3', 'Архитектура');
+INSERT INTO categories VALUES ('4', 'Базовые глаголы');
+INSERT INTO categories VALUES ('5', 'Бизнес');
+INSERT INTO categories VALUES ('6', 'Внешность');
+INSERT INTO categories VALUES ('7', 'Военное дело, оружие');
+INSERT INTO categories VALUES ('8', 'Время года, календарь');
+INSERT INTO categories VALUES ('9', 'Вещи');
+INSERT INTO categories VALUES ('10', 'География');
+INSERT INTO categories VALUES ('11', 'Город');
+INSERT INTO categories VALUES ('12', 'Деньги');
+INSERT INTO categories VALUES ('13', 'Деревья, кустарники');
+INSERT INTO categories VALUES ('14', 'Дом');
+INSERT INTO categories VALUES ('15', 'Еда');
+INSERT INTO categories VALUES ('16', 'Животные');
+INSERT INTO categories VALUES ('17', 'Здоровье');
+INSERT INTO categories VALUES ('18', 'Знаки зодиака');
+INSERT INTO categories VALUES ('19', 'Искусство');
+INSERT INTO categories VALUES ('20', 'Карьера');
+INSERT INTO categories VALUES ('21', 'Кино');
+INSERT INTO categories VALUES ('22', 'Компьютер');
+INSERT INTO categories VALUES ('23', 'Космос');
+INSERT INTO categories VALUES ('24', 'Литература');
+INSERT INTO categories VALUES ('25', 'Магазины');
+INSERT INTO categories VALUES ('26', 'Маркетинг');
+INSERT INTO categories VALUES ('27', 'Математика');
+INSERT INTO categories VALUES ('28', 'Мебель');
+INSERT INTO categories VALUES ('29', 'Музыка');
+INSERT INTO categories VALUES ('30', 'Одежда');
+INSERT INTO categories VALUES ('31', 'Политика');
+INSERT INTO categories VALUES ('32', 'Психология');
+INSERT INTO categories VALUES ('33', 'Путешествия');
+INSERT INTO categories VALUES ('34', 'Рыбы');
+INSERT INTO categories VALUES ('35', 'Семья');
+INSERT INTO categories VALUES ('36', 'СМИ');
+INSERT INTO categories VALUES ('37', 'Социальные сети');
+INSERT INTO categories VALUES ('38', 'Спорт');
+INSERT INTO categories VALUES ('39', 'Строительство');
+INSERT INTO categories VALUES ('40', 'Транспорт');
+INSERT INTO categories VALUES ('41', 'Фотография');
+INSERT INTO categories VALUES ('42', 'Характер');
+INSERT INTO categories VALUES ('43', 'Хобби');
+INSERT INTO categories VALUES ('44', 'Цвета');
+INSERT INTO categories VALUES ('45', 'Цветы');
+INSERT INTO categories VALUES ('46', 'Числа');
+INSERT INTO categories VALUES ('47', 'Экология');
+INSERT INTO categories VALUES ('48', 'Экономика');
+INSERT INTO categories VALUES ('49', 'Юриспруденция');
+INSERT INTO categories VALUES ('50', 'Список слов Сводеша');

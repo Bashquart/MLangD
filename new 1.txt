@@ -1,0 +1,60 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace WindowsFormsApp1
+{
+public partial class Form2 : Form
+{
+public Form2()
+{
+InitializeComponent();
+}
+
+private void button2_Click(object sender, EventArgs e)
+{
+string RegistartionString = "server=localhost;user=root;database=mysql;port=3306;password=19751980";
+MySqlConnection Registartion = new MySqlConnection(RegistartionString);
+
+string Check = "select * from user";
+MySqlCommand Command = new MySqlCommand("CREATE USER '" + textBox1.Text + "'@'%' IDENTIFIED BY '" + textBox2.Text + "';", Registartion);
+
+MySqlDataReader retrieve = null;
+Registartion.Open();
+MySqlCommand CheckCommand = new MySqlCommand(Check, Registartion);
+retrieve = CheckCommand.ExecuteReader();
+
+List<string> ListA = new List<string>();
+while (retrieve.Read())
+{
+ListA.Add((string)retrieve["User"]);
+}
+Registartion.Close();
+
+string Login = ListA.Find((x) => x == textBox1.Text);
+
+if (Login != textBox1.Text)
+{
+Registartion.Open();
+Command.ExecuteNonQuery();
+MessageBox.Show("Ваш аккаунт был создан!", "Registartion успешна!");
+}
+
+else
+{
+MessageBox.Show("Пользователь с таким логином уже существует, пожалуйста, введите другой логгин!", "Ошибка регистрации!");
+}
+}
+
+
+
+
+
